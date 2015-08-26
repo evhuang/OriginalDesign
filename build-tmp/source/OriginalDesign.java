@@ -24,28 +24,41 @@ public void setup()
 
 public void draw()
 {
+  colorChange();
   pen();
   eraser();
+  
 }
 
 public void pen()
 // use this to draw
 {
 	if (mousePressed == true) {
-		strokeWeight(10);
-		point(mouseX, mouseY);
-	}
-	if (key == '2') {
-		strokeWeight(10);
-		point(mouseX, mouseY);
+		fill(0);
+		ellipse(mouseX, mouseY, 30, 30);
 	}
 }
 public void eraser()
 //use this to erase
 {
 	if (key == '1') {
+		noStroke();
 		fill(255);
 		ellipse(mouseX, mouseY, 50, 50);
+	}
+}
+public void colorChange()
+//use this to change color 
+{
+	keyPressed();
+	if (key == 'r') {
+		fill (255,0,0);
+	}
+	else if (key == 'g') {
+		fill (0,255,0);
+	}
+	else if (key == 'b') {
+		fill (0,0,255);
 	}
 }
   static public void main(String[] passedArgs) {
