@@ -3,44 +3,50 @@ void setup()
   size(500,500);
   background(255);
   frameRate(120);
-
- }
+}
 
 void draw()
 {
   colorChange();
   pen();
   eraser();
-  
 }
 
 void pen()
 // use this to draw
 {
-	if (mousePressed == true) {
-		fill(0);
-		ellipse(mouseX, mouseY, 30, 30);
-	}
+  if ((mousePressed == true) && (key == '1')) {
+    fill(0);
+    ellipse(mouseX, mouseY, 30, 30);
+  }
 }
+
 void eraser()
 //use this to erase
 {
-	if (key == '1') {
-		noStroke();
-		fill(255);
-		ellipse(mouseX, mouseY, 50, 50);
-	}
+  if ((key == '5') && (mousePressed == true)) {
+    noStroke();
+    fill(255);
+    ellipse(mouseX, mouseY, 80, 80);
+  }
 }
+
 void colorChange()
 //use this to change color 
 {
-	if (key == 'r') {
-		fill (255,0,0);
-	}
-	else if (key == 'g') {
-		fill (0,255,0);
-	}
-	else if (key == 'b') {
-		fill (0,0,255);
-	}
+  if ((key == '2') && (mousePressed == true)) {
+    fill (255,0,0);
+    noStroke();
+    ellipse(mouseX, mouseY, 30, 30);
+  }
+  else if ((key == '3') && (mousePressed == true)) {
+    fill (0,255,0);
+    noStroke();
+    ellipse(mouseX, mouseY, 30, 30);
+  }
+  else if ((key == '4') && (mousePressed == true)) {
+    fill (0,0,255);
+    noStroke();
+    ellipse(mouseX, mouseY, 30, 30);
+  }
 }
