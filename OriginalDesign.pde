@@ -2,7 +2,7 @@ void setup()
 {
   size(800,800);
   background(255);
-  frameRate(120);
+  frameRate(480);
 }
 
 void draw()
@@ -50,6 +50,11 @@ void colorChange()
     noStroke();
     ellipse(mouseX, mouseY, 20, 20);
   }
+  else if ((key == 'r') && (mousePressed == true)) {
+  	fill (random(256), random(256), random(256));
+  	noStroke();
+  	ellipse(mouseX, mouseY, 20, 20);
+  }
 }
 
 void clean()
@@ -58,3 +63,4 @@ void clean()
 		background(255);
 	}
 }
+
